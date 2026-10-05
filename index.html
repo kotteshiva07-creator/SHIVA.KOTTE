@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abhay Rajawat | Video Editor & Motion Designer</title>
+<meta name="description" content="Video editor and motion designer specialising in SaaS motion ads, promos and social media content.">
+<style>
+  :root{
+    --bg:#05080c;
+    --card:rgba(120,190,255,.07);
+    --card-hover:rgba(120,190,255,.14);
+    --line:rgba(125,200,255,.14);
+    --accent:#7cc8ff;
+    --text:#ffffff;
+    --muted:#a9b8c6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+    color:var(--text);
+    background-color:var(--bg);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:48px 48px;
+    line-height:1.6;
+    min-height:100vh;
+  }
+  /* soft glow on top of grid */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;
+    background:radial-gradient(60% 40% at 50% 0%, rgba(124,200,255,.16), transparent 70%);
+  }
+  .wrap{position:relative;max-width:920px;margin:0 auto;padding:32px 20px 64px}
+
+  nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+  .logo{font-weight:700;letter-spacing:.5px}
+  .logo span{color:var(--accent)}
+  nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem}
+  nav a:hover{color:var(--accent)}
+
+  .glass{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
+
+  /* Hero */
+  .hero{display:flex;align-items:center;gap:24px;padding:28px}
+  .avatar{
+    width:110px;height:110px;border-radius:16px;flex-shrink:0;
+    background:linear-gradient(135deg,#bfe5ff,#7cc8ff);
+    display:grid;place-items:center;overflow:hidden;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .avatar svg{width:70%;height:70%;fill:#0b2233}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.15;letter-spacing:.5px}
+  .hero p{color:var(--muted);margin-top:6px;font-size:1.05rem}
+  .hero p b{color:var(--accent)}
+
+  section{margin-top:44px}
+  h2{font-size:1.4rem;margin-bottom:16px}
+  h2 .dot{color:var(--accent)}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+  /* Help chips */
+  .chip{
+    padding:16px;display:flex;align-items:center;gap:12px;
+    transition:.2s;text-decoration:none;color:inherit;
+  }
+  .chip:hover{background:var(--card-hover);transform:translateY(-3px);border-color:var(--accent)}
+  .chip .ic{
+    width:44px;height:44px;border-radius:50%;background:#e8f5ff;
+    display:grid;place-items:center;font-size:1.3rem;flex-shrink:0;
+  }
+  .chip strong{display:block;font-size:1.05rem}
+  .chip small{color:var(--muted);font-size:.78rem}
+
+  /* Videos */
+  .video{aspect-ratio:16/9;position:relative;overflow:hidden;cursor:pointer;transition:.2s}
+  .video:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video .ph{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;font-weight:600;
+  }
+  .play{
+    width:46px;height:46px;border-radius:50%;background:var(--accent);
+    display:grid;place-items:center;
+  }
+  .play::after{
+    content:"";border-left:14px solid #05080c;border-top:9px solid transparent;
+    border-bottom:9px solid transparent;margin-left:4px;
+  }
+
+  /* Services */
+  .service{padding:26px 12px;text-align:center;font-weight:600;transition:.2s}
+  .service:hover{background:var(--card-hover);border-color:var(--accent)}
+
+  /* About + Contact */
+  .about{padding:24px;color:var(--muted)}
+  .contact{padding:24px}
+  .contact p{margin-bottom:6px}
+  .contact a{color:var(--accent);text-decoration:none}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+  .btn{
+    display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;
+    text-decoration:none;transition:.2s;
+  }
+  .btn.primary{background:var(--accent);color:#05080c}
+  .btn.primary:hover{background:#fff}
+  .btn.ghost{border:1px solid var(--accent);color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent);color:#05080c}
+
+  footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:56px}
+
+  @media (max-width:640px){
+    .hero{flex-direction:column;text-align:center}
+    .grid3{grid-template-columns:1fr}
+    nav a{margin-left:12px}
+    .video{aspect-ratio:16/9}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="logo">ABHAY<span>.</span>RAJAWAT</div>
+    <div>
+      <a href="#works">Works</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero glass">
+    <div class="avatar">
+      <!-- Apni photo lagane ke liye: <img src="photo.jpg" alt="Abhay Rajawat"> -->
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.5"/><path d="M3 22c0-5 4-8 9-8s9 3 9 8z"/></svg>
+    </div>
+    <div>
+      <h1>ABHAY RAJAWAT</h1>
+      <p>Proficient in Editing <b>SaaS Motion Ads</b></p>
+    </div>
+  </header>
+
+  <!-- I HELP -->
+  <section>
+    <h2>I help businesses with Promo Videos<span class="dot">.</span></h2>
+    <div class="grid3">
+      <a class="chip glass" href="#works"><div class="ic">🎬</div><div><strong>Promos</strong><small>SaaS Launch Videos</small></div></a>
+      <a class="chip glass" href="#works"><div class="ic">✨</div><div><strong>Ads</strong><small>Meta Ads for Sales</small></div></a>
+      <a class="chip glass" href="#works"><div class="ic">📱</div><div><strong>Insta</strong><small>Social Media Content</small></div></a>
+    </div>
+  </section>
+
+  <!-- FEATURED WORKS -->
+  <section id="works">
+    <h2>Featured Works<span class="dot">.</span></h2>
+    <div class="grid3">
+      <!-- data-yt mein YouTube video ID daalo. Example: data-yt="dQw4w9WgXcQ" -->
+      <div class="video glass" data-yt="">
+        <div class="ph"><div class="play"></div>Video #1</div>
+      </div>
+      <div class="video glass" data-yt="">
+        <div class="ph"><div class="play"></div>Video #2</div>
+      </div>
+      <div class="video glass" data-yt="">
+        <div class="ph"><div class="play"></div>Video #3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Services<span class="dot">.</span></h2>
+    <div class="grid3">
+      <div class="service glass">Video Editing</div>
+      <div class="service glass">Motion Graphics</div>
+      <div class="service glass">Thumbnails</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me<span class="dot">.</span></h2>
+    <div class="about glass">
+      I am a 23 year old video editor and motion designer. I make SaaS promo videos, Meta ads and
+      social media content that grab attention and help brands grow. (Yahan apne baare mein likho.)
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact<span class="dot">.</span></h2>
+    <div class="contact glass">
+      <p>Email: <a href="mailto:apnanaam@gmail.com">apnanaam@gmail.com</a></p>
+      <p>Number: <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+      <div class="btns">
+        <a class="btn primary" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn ghost" href="mailto:apnanaam@gmail.com">Send Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© <span id="yr"></span> Abhay Rajawat. All rights reserved.</footer>
+</div>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Click par YouTube video play hoga (agar data-yt mein ID di hai)
+  document.querySelectorAll(".video").forEach(function(card){
+    card.addEventListener("click", function(){
+      var id = card.dataset.yt;
+      if(!id || card.querySelector("iframe")) return;
+      card.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+        '?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+    });
+  });
+</script>
+</body>
+</html>
